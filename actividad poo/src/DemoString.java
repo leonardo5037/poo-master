@@ -9,7 +9,6 @@ public class DemoString {
         String[] resultado = frase_nueva.split("-");
 
         for(String s : resultado) {
-                String resultado = s.trim();
                 System.out.println(s.equals("AMOR"));
         }
 
