@@ -24,40 +24,42 @@ public class Numeros_A_Letras {
     }
 
     public static String convertir_a_letras(int numero) {
-        if (numero == 0) {
-            return "Cero";
-        } else if (numero < 10) {
-            return unidades[numero];
-        } else if (numero < 20) {
-            return diez_veinte[numero - 10];
-        } else if (numero < 100) {
-            String resta1 = decenas[numero / 10];
-            if (numero % 10 != 0) {
-                resta1 += " y " + unidades[numero % 10];
-            }
-            return resta1;
-        } else if (numero < 1000) {
-            if (numero == 100) {
-                return "Cien";
-            }
+        if (numero >= 0 && numero <= 9999) {
+            if (numero == 0) {
+                return "Cero";
+            } else if (numero < 10) {
+                return unidades[numero];
+            } else if (numero < 20) {
+                return diez_veinte[numero - 10];
+            } else if (numero < 100) {
+                String r1 = decenas[numero / 10];
+                if (numero % 10 != 0) {
+                    r1 += " y " + unidades[numero % 10];
+                }
+                return r1;
+            } else if (numero < 1000) {
+                if (numero == 100) {
+                    return "Cien";
+                }
 
-            String resta2 = centenas[numero / 100];
+                String r2 = centenas[numero / 100];
 
-            if (numero % 100 != 0) {
-                resta2 += " " + convertir_a_letras(numero % 100);
+                if (numero % 100 != 0) {
+                    r2 += " " + convertir_a_letras(numero % 100);
+                }
+                return r2;
+            } else if (numero < 10000) {
+                String r3;
+                if (numero / 1000 == 1) {
+                    r3 = "Mil";
+                } else {
+                    r3 = convertir_a_letras(numero / 1000) + " Mil";
+                }
+                if (numero % 1000 != 0) {
+                    r3 += " " + convertir_a_letras(numero % 1000);
+                }
+                return r3;
             }
-            return resta2;
-        } else if(numero < 10000){
-            String resta3;
-            if(numero/1000 == 1){
-                resta3 = "Mil";
-            }else{
-                resta3 = convertir_a_letras(numero/1000) + " Mil";
-            }
-            if(numero % 1000 != 0){
-                resta3 += " " + convertir_a_letras(numero%1000);
-            }
-            return resta3;
         }
         return "Número fuera de rango";
     }

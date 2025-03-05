@@ -5,6 +5,7 @@ public class Persona {
     double estatura;
     String genero;
 
+
     double calcular_imc(){
         return peso/(estatura*estatura);
     }
