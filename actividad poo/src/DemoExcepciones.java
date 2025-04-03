@@ -10,9 +10,10 @@ import java.io.FileInputStream;
 
     Un ERROR es aquello de lo que no te puedes recuperar, ejemplo(pantallazo azul, se va la luz)
     el finally se ocupa para cuando ocurra o no ocurra la excepcion, es decir, se ejecuta si o si
-    public class DemoExcepciones {
+   */
 
-    public static void main(String[] args) {
+    public class DemoExcepciones {
+        public static void main(String[] args) {
         PruebaExcepcion pe = new PruebaExcepcion();
         try {
             pe.creaArreglo();
@@ -20,7 +21,7 @@ import java.io.FileInputStream;
             System.out.println("Mi mensaje de excepcion");
         }
 
-
+        /*
         try {
            int arreglo[] = new int[10];
            // int suma = 10/0;
@@ -32,7 +33,7 @@ import java.io.FileInputStream;
         } catch (Exception e){
            System.out.println("Ocurrio un error diferente");
         }
-
+        */
 
         // String ruta = "Persona.java";
         // FileInputStream fis = new FileInputStream(ruta);
@@ -41,9 +42,8 @@ import java.io.FileInputStream;
 }
 
 class PruebaExcepcion{
-    public static void main(String[] args) throws IndexOutOfBoundsException {
+    public static void creaArreglo() throws IndexOutOfBoundsException {
         int arreglo[] = new int[10];
         arreglo[11] = 20;
     }
 }
-*/
