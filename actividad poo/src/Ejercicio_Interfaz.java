@@ -24,7 +24,6 @@ public class Ejercicio_Interfaz {
     Nodo n2 = new Nodo("B", 0.0);
 
     n1.conectarDerecha(n2);
-    n2.conectarDerecha(n1);
 
     System.out.println(n1);
     System.out.println(n2);
