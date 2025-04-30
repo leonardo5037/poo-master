@@ -1,3 +1,4 @@
+/*
 public class Multimedia {
     public static void main(String[] args) {
         Pelicula p = new Pelicula("Infinity war", 149.0, 2052415039);
@@ -127,3 +128,4 @@ abstract class Media {
 
 
     // VOY A HACER LA CLASE SERIE
+*/
