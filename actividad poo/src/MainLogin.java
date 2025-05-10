@@ -1,3 +1,4 @@
+/*
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -37,14 +38,14 @@ class Login {
 
     public void verificaAcceso(String user, String pwd) throws NoExisteUsuario {
         for (Usuario usuario:listaUsuarios)
-            if (usuario.getUsuario().equals(user) && usuario.getPassword().equals(pwd)) {
+            if (usuario.getUsuarios().equals(user) && usuario.getPassword().equals(pwd)) {
             return;
             }
         throw new NoExisteUsuario("Usuario no encontrado");
     }
 }
 
-class Usuario {
+class Usuarios {
 
     private String Usuario;
     private String Password;
@@ -56,9 +57,10 @@ class Usuario {
         return Password;
     }
 
-    public Usuario(String user, String pwd) {
+    public Usuarios(String user, String pwd) {
         this.Usuario = user;
         this.Password = pwd;
     }
 
 }
+*/

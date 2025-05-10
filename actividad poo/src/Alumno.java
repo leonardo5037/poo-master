@@ -1,3 +1,5 @@
+import java.io.Serializable;
+
 class Alumno {
     private String nombre;
     private String apellidos;
