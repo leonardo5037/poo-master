@@ -30,13 +30,6 @@ class recetas implements Serializable {
         ingredientes.add(ingrediente);
     }
 
-    public void mostrarIngredientes() {
-        for (Ingrediente ingrediente : ingredientes) {
-            System.out.println(ingrediente);
-        }
-    }
-
-
 }
 
 public class EjercicioRecetas {
@@ -57,10 +50,10 @@ public class EjercicioRecetas {
 
             switch (opcion) {
                 case 1:
-                    System.out.println("nombre del receta: ");
+                    System.out.println("nombre de la receta: ");
                     String nombre = sc.nextLine();
                     recetas receta1 = new recetas(nombre);
-                    System.out.println("ingrese cada ingrediente: (Escribir fin para perminar)");
+                    System.out.println("ingrese cada ingrediente: (Escribir fin para terminar)");
                     while (true) {
                         String nombre_ingrediente = sc.nextLine();
                         if (nombre_ingrediente.equals("fin")) {
@@ -75,10 +68,12 @@ public class EjercicioRecetas {
                         oos.close();
                     } catch (Exception e) {
                     }
+                    System.out.println("SE CREO LA RECETA " +  nombre );
+                    System.out.println();
                     break;
 
                 case 2:
-                    System.out.println("nombre del receta que quieres buscar: ");
+                    System.out.println("NOMBRE DE LA RECETA QUE QUIERES BUSCAR ");
                     String recetaABuscar = sc.nextLine();
                     File archivoBuscar = new File("C:/Users/Leonardo Garcia/OneDrive/Desktop/poo_ejemplo/recetas/" + recetaABuscar + ".txt");
 
@@ -88,8 +83,8 @@ public class EjercicioRecetas {
                             recetas receta = (recetas) ois.readObject();
                             ois.close();
 
-                            System.out.println("Receta encontrada: " + receta);
-                            System.out.println("Ingredientes");
+                            System.out.println("RECETA ENCONTRADA: " + receta);
+                            System.out.println("INGREDIENTES DE LA RECETA: ");
                             for (Ingrediente ingrediente : receta.ingredientes) {
                                 System.out.println(ingrediente);
                             }
@@ -97,22 +92,24 @@ public class EjercicioRecetas {
                         } catch (Exception e) {
                         } break;
                     }else{
-                        System.out.println("No existe la receta: ");
+                        System.out.println("NO EXISTE LA RECETA QUE BUSCAS ");
                         System.out.println();
                     }
                     break;
 
                 case 3:
-                    System.out.println("nombre del receta que quieres eliminar: ");
+                    System.out.println("NOMBRE DE LA RECETA QUE QUIERES ELIMINAR: ");
                     String recetaAEliminar = sc.nextLine();
-                    File archivo = new File("C:/Users/Leonardo Garcia/OneDrive/Desktop/poo_ejemplo/recetas/" + recetaAEliminar + ".txt");
+                    File archivoEliminar = new File("C:/Users/Leonardo Garcia/OneDrive/Desktop/poo_ejemplo/recetas/" + recetaAEliminar + ".txt");
 
-                    if (archivo.exists()) {
-                        archivo.delete();
-                        System.out.println("Receta eliminada: " + recetaAEliminar);
+                    if (archivoEliminar.exists()) {
+                        archivoEliminar.delete();
+                        System.out.println("RECETA ELIMINADA: " + recetaAEliminar);
+                        System.out.println();
                         break;
                     } else {
-                        System.out.println("No existe el archivo");
+                        System.out.println("NO EXISTE ESA RECETA ");
+                        System.out.println();
                     }
                     break;
 
@@ -121,7 +118,7 @@ public class EjercicioRecetas {
                     return;
 
                 default:
-                    System.out.println("Opcion no valida");
+                    System.out.println("OPCION NO VALIDA");
             }
         }
     }
