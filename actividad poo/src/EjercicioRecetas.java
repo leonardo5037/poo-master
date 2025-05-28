@@ -100,10 +100,10 @@ public class EjercicioRecetas {
                 case 3:
                     System.out.println("NOMBRE DE LA RECETA QUE QUIERES ELIMINAR: ");
                     String recetaAEliminar = sc.nextLine();
-                    File archivoEliminar = new File("C:/Users/Leonardo Garcia/OneDrive/Desktop/poo_ejemplo/recetas/" + recetaAEliminar + ".txt");
+                    File archivoAEliminar = new File("C:/Users/Leonardo Garcia/OneDrive/Desktop/poo_ejemplo/recetas/" + recetaAEliminar + ".txt");
 
-                    if (archivoEliminar.exists()) {
-                        archivoEliminar.delete();
+                    if (archivoAEliminar.exists()) {
+                        archivoAEliminar.delete();
                         System.out.println("RECETA ELIMINADA: " + recetaAEliminar);
                         System.out.println();
                         break;

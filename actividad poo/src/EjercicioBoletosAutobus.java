@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 /*
 
  Crear una aplicacion para comprar boletos de autobus.
@@ -79,11 +81,61 @@ class Asiento {
 public class EjercicioBoletosAutobus {
     public static void main(String[] args) {
         Autobus autobus = new Autobus();
+        Scanner sc = new Scanner(System.in);
+        int opcion;
 
-        autobus.reservarAsiento(4);
-        autobus.reservarAsiento(10);
-        autobus.reservarAsiento(5);
-        autobus.mostrarAsientos();
+
+        while (true) {
+            System.out.println("======APLICACION AUTOBUS======");
+            System.out.println("1. Ver disponibilidad de asientos");
+            System.out.println("2. Reservar asiento");
+            System.out.println("3. Desbloquear asiento");
+            System.out.println("4. Obtener tickets o boleto");
+            System.out.println("5. Cancelar ticket");
+            System.out.println("6. Salir");
+            opcion = sc.nextInt();
+            sc.nextLine();
+            switch (opcion) {
+                case 1:
+                    System.out.println("Asientos del autobus:");
+                    autobus.mostrarAsientos();
+                    System.out.println();
+                    break;
+
+                case 2:
+                    System.out.println("Ingrese el numero del asiento que quiere reservar:");
+                    int AsientoAReservar = sc.nextInt() - 1;
+                    if(AsientoAReservar < 41 && AsientoAReservar > 0) {
+                        if (autobus.reservarAsiento(AsientoAReservar) == true) {
+                            System.out.println("El asiento fue reservado");
+                            System.out.println();
+                        }else{
+                            System.out.println("El asiento ya esta reservado");
+                            System.out.println();
+                        }
+                    }else {
+                        System.out.println("El asiento no existe");
+                        System.out.println();
+                    }
+                    break;
+
+                case 3:
+                    System.out.println("Ingrese el numero del asiento que quiere desbloquear:");
+                    int AsientoADesbloquear = sc.nextInt() - 1;
+                    if (autobus.DesbloquearAsiento(AsientoADesbloquear) == true) {
+                        System.out.println("El asiento fue desbloqueado");
+                        System.out.println();
+                    }else{
+                        System.out.println("El asiento no ha sido bloqueado");
+                        System.out.println();
+                    }
+                    break;
+
+
+
+            }
+        }
     }
-
 }
+
+
